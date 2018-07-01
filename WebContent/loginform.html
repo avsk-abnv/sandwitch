@@ -1,0 +1,37 @@
+    <div id="loginform">
+        <a href="#"><span id="crossbutton1">X</span></a><br>
+        <h4 style="text-align: center;margin-top:0px;font-size: 20px;font-weight: normal;color:blue;">Login to Continue</h4>
+        <form method="POST" action="Authorize" id="login_form">
+            <input type="text" name="email" id="e_mail" placeholder="Username/Email" required class="toclear1"/><br>
+            <input type="password" name="pword" id="p_word" placeholder="Password" required class="toclear1"/>
+            <button id="submit1" type="button">Login</button>
+            <br>
+            <div class="g-signin2" data-onsuccess="onSignIn" id="myP" style="margin-left:45px;width:304px;height:35px;margin-top: 20px;"></div>
+        </form>
+         <br><br>
+         <a href="#" style="color:blue;" id="openreg"><h4 style="text-align:center;font-weight: normal;margin-top: 0px;">
+                 New Here? Click to Create an account</h4></a>
+         <br>
+    </div>
+<script>
+    $( document ).ready(function() {
+    $('#submit1').click(function(e){
+        $.ajax({
+                    type:"POST",
+                    async:false, // set async false to wait for previous response
+                    url: "chk_credentials",
+                    data:{email:$('#e_mail').val(),password:$('#p_word').val()},
+                    success: function(data){
+                        if($.trim(data)==="failure"){
+                            $("<h4 style=\"float:top;text-align:center;color:red;margin:0;font-size:13px;\" id=\"errormsg\">Account Credentials are Wrong</h4>").insertBefore("#e_mail");
+                            setTimeout(function(){ $('#errormsg').remove(); },10000);
+                        }else if($.trim(data)==="success"){
+                            $('#login_form').submit();
+                        }
+                        $('#e_mail').val("");
+                            $('#p_word').val("");
+                    }
+                });
+                });
+        });
+    </script>

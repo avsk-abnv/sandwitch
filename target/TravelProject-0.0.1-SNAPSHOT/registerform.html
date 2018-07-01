@@ -1,0 +1,56 @@
+    <div id="Register_form">
+        <a href="#"><span id="crossbutton">X</span></a><br>
+        <h4 style="text-align: center;margin-top:0px;font-size: 20px;font-weight: normal;color:green;">Create An Account</h4>
+        <form action="Register" method="POST" style="border-top:2px solid lightgrey;" id="reg_form">
+            <input type="text" name="first_name" id="fname" placeholder="First Name" required class="toclear"/>
+            <input type="text" name="last_name" id="lname" placeholder="Last Name" required class="toclear"/><br/>
+            <input type="text" name="display_name" id="dname" placeholder="Display Name" required class="toclear"/>
+            <span id="gen">Gender: </span><select name="gender" id="gndr">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select><br/>
+            <input type="email" name="email" id="email" placeholder="Email" required class="toclear"/><br/>
+            <input type="password" name="password" id="pword" placeholder="Password" required class="toclear"/>
+            <input type="password" name="conf_password" id="cpword" placeholder="Confirm Password" required class="toclear"/>
+            <span>(On clicking the <span style="color:blue;">[Register]</span> button you agree to our terms and conditions)</span><br><br>
+            <button id="submit2" type="button">Register</button>
+        </form>
+        <br>
+        <div class="g-signin2" data-onsuccess="onSignIn" id="myP" style="margin-left:100px;width:304px;height:35px;margin-top: 0px;"></div><br>
+        <a href="#" id="openlogin"><h4 style="text-align: center;margin-top:0px;font-size: 15px;font-weight: normal;margin:-10px 0px;color: blue;">
+                Already Registered? Click to Login</h4></a>
+        <br>
+    </div>
+<script>
+    $( document ).ready(function() {
+    $('#submit2').click(function(e){
+        if($('#pword').val()!==$('#cpword').val()){
+            $("<h4 style=\"float:top;text-align:center;color:red;margin:0;font-size:13px;\" id=\"errormsg\">Passwords don't match</h4>").insertAfter("#cpword");
+            $('#cpword').focus();
+        }
+        else{
+            $('#errormsg').remove();
+        $.ajax({
+                    type:"POST",
+                    async:false, // set async false to wait for previous response
+                    url: "chk_emails",
+                    data:{email:$('#email').val()},
+                    success: function(data){
+                        if($.trim(data)==="failure"){
+                            $("<h4 style=\"float:top;text-align:center;color:red;margin:0;font-size:13px;\" id=\"errormsg\">Sorry ! This email is already taken</h4>").insertBefore("#email");
+                            setTimeout(function(){ $('#errormsg').remove(); },10000);
+                            $('#email').focus();
+                        }else if($.trim(data)==="success"){
+                            $('#reg_form').submit();
+                        }
+                        console.log($.trim(data));
+                    },
+                    error:function(XMLHttpRequest, textStatus, errorThrown) { 
+                        console.log("Status: " + textStatus); console.log("Error: " + errorThrown);
+                    }
+                });
+                }
+            });   
+        });
+    </script>

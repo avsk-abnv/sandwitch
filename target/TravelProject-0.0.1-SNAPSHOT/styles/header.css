@@ -1,0 +1,130 @@
+            html, body {
+                margin: 0;
+                height: 100%;
+            }
+            #search{width:300px;height:33px;border:none;border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;padding-left: 10px; position:absolute;left:5px;border-left: 1px solid gray;}
+            ul{margin-top: 0px;list-style-type: none;padding:0px;box-shadow: 2px 0px 2px rgba(0,0,0,0.5);
+               background: white;width: 363px;position: absolute;left: 6px;top: 33px;border-left: 1px solid #f7f7f7;z-index: 2;}
+            #thisone{width: 400px;position:relative;}
+            #wrapper{position: absolute;top:5px;right: 25.6%;width: 340px;}
+            ul>li{width:363px;height: 30px;float:top;text-indent:10px;text-align: left;font-family: "Candara";}
+            li>a:hover{color:skyblue;}
+            #find{display: block;
+                        height: 35px;
+                        width: 50px;
+                        background: white;
+                        box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+                        position: absolute;
+                        right: 35px;
+                        top: 0px;
+                        padding-right: 15px;
+                        border-top-right-radius: 15px;
+                        border-bottom-right-radius: 15px;
+                        padding-left: 5px;
+                        z-index: 1;
+                        border: none;                                                                           }
+            #_navbar{background: #0090ff;width:100%;position: absolute;top:0px;left: 0px;height: 50px;}
+            #navbar2{background: #0090ff;width:100%;position: relative;margin-top:0px;height: 50px;margin-left: -10px;}
+            #signin{position: absolute;top:5px;right:7.3%;width:150px;height:35px; font-family: "Bahnschrift";  font-weight: bold;
+            border:2px solid lime;background: transparent;color:lime;}
+            #signin:hover{background: darkgreen; color:white;border:2px solid darkgreen;transition: 0.3s;}
+            #aboutus{font-family: "Candara";position:absolute;top:5px;right: 800px;height:30px;padding-top:5px;width:80px;padding-left: 20px;}
+            #contact{font-family: "Candara";position: absolute;top:5px;right:700px;height:30px;padding-top:5px;width: 80px;padding-left: 25px;}
+            #aboutus:hover{border: 2px solid white;}
+            #contact:hover{border: 2px solid white;}
+            #logo{font-family: "Candara";position:absolute;top:5px;right:85%;color:white;font-size: 30px;}
+            a{text-decoration: none;color:white;}
+            #filter{position:absolute;top:10px;right:65.24%;color:white;font-family: "Candara";font-weight: bold;}
+            ol{list-style-type: none;padding-left:0px;width:100%;position:absolute;top: 33px;background: #0090ff;left: 0px;font-family: "Candara";
+            color:white;box-shadow: 0 8px 6px -6px black;}
+            
+            option{color:black; }
+            #item1,#item2,#item3{height: 35px;display:none;}
+            h4> a{width:100%;display: block;height:30px;padding-top: 5px;}
+            h4>a:hover{background: chocolate;}
+            h4>a:active{background: chocolate;}
+             #navbtn{top:0px;right:0px;position: absolute;color:white;display:none;padding:10px;}
+             #filter1{top:-7px;right:-140px;               width: 130px;}
+             #filter2{top:-7px;right: -350px;               width: 150px;}
+             #user_container{position: relative;float: right;margin-top: -75px;z-index: 1;display: none;
+                             margin-right: 10%;box-shadow: inset 0 10px 20px #000000;border-radius: 30px;}
+             #signinas{position: relative;max-height: 50px;max-width: 50px;border-radius: 25px;margin-left: 10px;top:3px;}
+             #user{position:relative;font-family: "Bahnschrift";color:lime;margin-left: 10px;bottom:15px;}
+            #userpanel{position:absolute;top: 100px;z-index: 1; display: none;
+                             right: 10%;background-color: rgb(249, 249, 249);width:150px;font-family:"Bahnschrift";font-weight: lighter; }
+            .menu>a>i,.menu>i{margin-left:10px;margin-bottom: 0;color:black;}
+            .menu>a>center,.menu>center{margin-top: -20px;color:black;}
+            #userpanel>div:hover{box-shadow: inset 0 0 20px #0090ff;}
+             @media all and (max-width: 1150px){
+                 #logo{left:2%;right:70%}
+                 #aboutus{left:20%}
+                 #contact{left:30%;}
+             }
+             @media all and (max-width:1000px){
+                 
+                 #aboutus{display: none;}
+                 #contact{display: none;}
+                 #signin{display:none;}
+                 #wrapper{right:10%;}
+                 #navbtn{display:block;}
+                 #navbtn:active{background-color: chocolate;}
+             }
+              #my_panel{width:100%;position:relative;margin-top:120px;align-content: center;display:table;}
+            #loginform{width:400px;min-height:400px;background:#f7f7f7;position:fixed;margin:10px auto;left:0;right:0;top:50px;
+                       font-family:"Candara";padding:20px;box-shadow:0 0 1000px gray;z-index:2;border-radius:2px;display:none;}
+            .toclear1{width:300px;height:30px;margin-bottom:30px;text-indent:10px;margin-left:45px;border:1px solid lightgrey;}
+            .toclear1:invalid{box-shadow:none;}
+            .toclear1:required{box-shadow:none;}
+            .toclear1:focus{border:1px solid skyblue;box-shadow:0 0 10px skyblue;transition:0.4s;background:#fffcd8;}
+            #submit1{margin-left:45px;width:304px;height:35px;font-size:15px;background: #0090ff;color:white;border:2px solid #0090ff;}
+            #submit1:hover{background:transparent;color:#0090ff;transition:0.5s;}
+            #submit1:active{background:transparent;color:#0090ff;}
+            #google1{height:40px;width:40px;margin-left:130px;border:2px solid #0090ff;background:transparent;border-radius:20px;}
+            #facebook1{height:40px;width:40px;margin-left:50px;border:2px solid #0090ff;;background:transparent;border-radius:20px;}
+            #google1:hover,#google1:active{background:#0090ff;color:white;}
+            #facebook1:hover,#facebook1:active{background:#0090ff;color:white;}
+            #crossbutton1{background:#d60023;color:white;padding:5px 10px;float:right;margin-top:-20px;margin-right:-20px;}
+            #Register_form{width:500px;min-height:500px;position:fixed;margin:10px auto;top:50px;left:0;right:0;font-family:"Candara";display: none;
+                                        border:none;background:#f7f7f7;border-radius:2px;padding:20px;box-shadow:0 0 1000px gray;z-index:2;}
+        #fname{margin-left:0px;height:30px;width:239px;margin-top:10px;}
+        #lname{margin-left:10px;height:30px;width:239px;margin-top:10px;}
+        #dname{margin-left:0px;height:30px;width:239px;margin-top:0px;}
+        #gen{margin-left:10px;height:30px;width:115px;margin-top:0px;}
+        #gndr{margin-left:10px;height:30px;width:100px;margin-top:0px;text-align: center;}
+        #email{margin-left:0px;height:30px;width:495px;}
+        #pword{margin-left:0px;height:30px;width:239px;}
+        #cpword{margin-left:10px;height:30px;width:239px;}
+        span{margin-left:0px;}
+        .toclear:invalid{box-shadow:none;}
+        .toclear:required{box-shadow:none;}
+        .toclear{margin-bottom:20px;text-indent:10px;border:1px solid lightgrey;background:white;}
+        .toclear:focus{border:1px solid skyblue;box-shadow:0 0 10px skyblue;transition:0.4s;background:#fffcd8;}
+
+        #submit2{margin-left:100px;width:300px;height:35px;font-size:15px;background: green;color:white;border:2px solid green;}
+        #submit2:hover{background:transparent;color:green;transition:0.5s;}
+        #submit2:active{background:transparent;color:green;}
+        #google{height:40px;width:40px;margin-left:180px;border:2px solid #0090ff;background:transparent;border-radius:20px;}
+        #facebook{height:40px;width:40px;margin-left:50px;border:2px solid #0090ff;;background:transparent;border-radius:20px;}
+        #google:hover,#google:active{background:#0090ff;color:white;}
+        #facebook:hover,#facebook:active{background:#0090ff;color:white;}
+        #crossbutton{background:#d60023;color:white;padding:5px 10px;float:right;margin-top:-20px;margin-right:-20px;}
+        #crossbutton:hover{background:red;}
+        #crossbutton1:hover{background: red;}
+        #mask{background-color: rgba(0,0,0,0.4);position: fixed;top:0;left:0;width:100%;height: 100%;display: none;z-index: 1;}
+        #tag{text-align: center;font-weight: normal;margin:0 0;}
+        #climate{padding:4px 25px;margin-left: 3px;margin-top: 30px;}
+        #type{padding:4px 30px;}
+        #states{padding:4px 25px;}
+        #_options{display:none;border-top: 1px solid #e2e2e2;overflow-x: hidden;overflow-y: hidden;}
+        .menu{border-bottom: 1px solid #e2e2e2;width:200px;}
+        .menutext{text-align: center;font-weight: normal;margin:0 0;color:black;padding:10px 0;}
+        .menutext:hover{background: #e2e2e2;}
+        .travelimg{max-width: 350px;width: 100%;border-top-right-radius: 3px;border-top-left-radius: 3px;float:top;
+                  object-position: center;position: absolute;object-fit: cover;height: 350px; transform: scale(1.2);}
+        .traveloc{ border-radius: 3px;padding: 0px;overflow: hidden;position: relative;width: 350px;height: 350px;
+        margin-left: 15px;float:left;margin-top: 15px;box-shadow: 0 8px 6px -6px black;}
+        .loctitle{font-weight: normal;font-family: "Bahnschrift";color:black;
+                 display: table;margin:auto; max-width: 280px;}
+        #my_container{margin:0 auto;width:83%;position: relative;}
+        
