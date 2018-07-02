@@ -22,7 +22,7 @@ public class Logout extends HttpServlet {
             throws ServletException, IOException {
         HttpSession session= request.getSession();
         session.setAttribute("currentuser", null);
-        response.sendRedirect("/TravelProject");
+        response.sendRedirect("/");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

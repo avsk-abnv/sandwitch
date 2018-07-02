@@ -46,12 +46,12 @@ public class Register extends HttpServlet {
         user.setPassword(password); user.setGender(gender);
         boolean success= udao.registerUser(user);
         if(success){
-            response.sendRedirect("/TravelProject");
+            response.sendRedirect("/");
             user= udao.getUserById(email_id);
             HttpSession session= request.getSession();
             session.setAttribute("currentuser", user);
         }else{
-            response.sendRedirect("/TravelProject");
+            response.sendRedirect("/");
         }
     }
 

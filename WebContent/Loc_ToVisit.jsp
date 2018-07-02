@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : Loc_ToVisit
     Created on : 10 Mar, 2018, 12:45:15 PM
@@ -365,7 +366,7 @@ pageEncoding="ISO-8859-1"%>
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
         console.log('User signed out.');
-        window.location.pathname="TravelProject/Logout";
+        window.location.pathname="/Logout";
       });
     }
     function onLoad() {

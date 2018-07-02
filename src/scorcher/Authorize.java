@@ -27,12 +27,12 @@ public class Authorize extends HttpServlet {
             boolean success= udao.loginUser(request.getParameter("email"), request.getParameter("pword"));
             UserBean user;
                     if(success){
-                                    response.sendRedirect("/TravelProject");
+                                    response.sendRedirect("/");
                                     user= udao.getUserById(request.getParameter("email"));
                                     HttpSession session= request.getSession();
                                     session.setAttribute("currentuser", user);
                     }else{
-                        response.sendRedirect("/TravelProject");
+                        response.sendRedirect("/");
                     }
     }
 

@@ -1,3 +1,4 @@
+
 <%@ page import="java.util.*,TravellerBean.*,TravellerDao.*,javax.servlet.http.*,java.lang.*" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
@@ -156,7 +157,7 @@ pageEncoding="ISO-8859-1"%>
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
         console.log('User signed out.');
-        window.location.pathname="TravelProject/Logout";
+        window.location.pathname="/Logout";
       });
     }
     function onLoad() {
